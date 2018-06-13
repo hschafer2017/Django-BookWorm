@@ -1,0 +1,16 @@
+{% extends 'books/base.html' %}
+
+{% block content %}
+    <h3>Your Books on BookWorm</h3>
+    
+    {% for books in book %}
+<h4>{{ books.title}}</h4>
+<ul>
+   
+       <li>{{ books.author }}</li>
+       <li>{{books.notes}}</li>
+
+
+</ul>
+{% endfor %}
+{% endblock content %}

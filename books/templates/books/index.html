@@ -1,0 +1,22 @@
+{% extends 'books/base.html' %}
+{% load static from staticfiles %}
+
+{% block content %}
+    <h3>Your Books on BookWorm</h3>
+    
+    {% for book in books %}
+<h4>{{ book.title}}</h4>
+<ul>
+   
+       <li>{{book.date}}</li>
+       <li>{{ book.author }}</li>
+       <li>{{book.notes}}</li>
+       <img src="{{MEDIA_URL}}{{book.image}}"></img>
+       
+
+
+</ul>
+{% endfor %}
+
+
+{% endblock content %}
