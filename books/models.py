@@ -8,7 +8,7 @@ class Book(models.Model):
     ISBN = models.CharField(max_length=254, default='')
     date = models.DateTimeField(auto_now_add=False)
     notes = models.TextField()
-    image = models.ImageField(upload_to='images', height_field=None, width_field=None, max_length=100)
+    image = models.ImageField(upload_to='images')
     
     def __str__(self):
         return self.title

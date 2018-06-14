@@ -1,16 +1,10 @@
-{% extends 'books/base.html' %}
-
-{% block content %}
-    <h3>Your Books on BookWorm</h3>
+{% extends 'books/base.html' %} {% load bootstrap_tags %} {% block content %}
+<h2>Let's Add a Book!</h2>
+<form method='POST' enctype='multipart/form-data'>
+    {% csrf_token %}
+    {{form | as_bootstrap }}
     
-    {% for books in book %}
-<h4>{{ books.title}}</h4>
-<ul>
-   
-       <li>{{ books.author }}</li>
-       <li>{{books.notes}}</li>
+    <input type="submit" value="Add" />
+</form>
 
-
-</ul>
-{% endfor %}
 {% endblock content %}
