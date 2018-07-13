@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 from .models import Book
 from .forms import BookForm
 
-# Create your views here.
+# Create your views here - BOOKS.
 def get_index(request):
     if request.user.is_authenticated:
         books = Book.objects.filter(owner=request.user)
